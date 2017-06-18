@@ -7,6 +7,7 @@ $(document).ready(function(){
     $("#submit").submit(function(e) {
     	e.preventDefault();
     	$("#nick").fadeOut();
+        $("html, body").css("background", "whitesmoke");
     	$("#chat").fadeIn();
     	var name = $("#nickname").val();
     	var time = new Date();
