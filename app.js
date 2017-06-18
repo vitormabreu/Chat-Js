@@ -8,13 +8,13 @@ var clients = {};
 app.use(express.static('./assets'));
 app.use(express.static('./node_modules'));
 app.get('/', function(req, res){
-	res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/index.html');
 });
 
 //SocketIO evento de conexão
 io.on("connection", function (client) {
 	client.on("join", function(name){
-		console.log("Joined: " + name);
+		console.log("Entrou: " + name);
 		clients[client.id] = name;
 		client.emit("update", "Você acaba de se conectar ao chat.");
 		client.broadcast.emit("update", name + " entrou no chat.")
@@ -28,7 +28,7 @@ io.on("connection", function (client) {
 	
 	//SocketIO evento de desconexão
 	client.on("disconnect", function(){
-		console.log("Disconnect");
+		console.log("Desconectou: " + clients[client.id]);
 		io.emit("update", clients[client.id] + " saiu da sala.");
 		delete clients[client.id];
 	});
