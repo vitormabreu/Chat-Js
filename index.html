@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<title>Chat JS</title>
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+	<div class="nickname_container" id="nick">
+
+		<span>Insira seu apelido:</span>
+		<form id="submit"><input type="text" id="nickname" /></form>
+
+	</div>
+
+	<div id="chat" hidden>
+
+		<div class="menu" =>
+			<div class="name" id="name">Alex</div>
+			<div class="last" id="time">18:09</div>
+		</div>
+
+		<ol class="chat">
+
+		</ol>
+
+		<input class="textarea" type="text" placeholder="Digite aqui..." id="textarea" />
+	</div>
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/socket.io-client/socket.io.js"></script>
+	<script src="assets/scripts.js"></script>
+</body>
+</html>
