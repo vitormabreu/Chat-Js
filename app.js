@@ -22,13 +22,13 @@ io.on("connection", function (client) {
 
 	//SocketIO evento de envio de mensagens
 	client.on("send", function(msg){
-		console.log("Message: " + msg);
+		console.log(clients[client.id] + " >> Menssagem: " + " " + msg);
 		client.broadcast.emit("chat", clients[client.id], msg);
 	});
 	
 	//SocketIO evento de desconexão
 	client.on("disconnect", function(){
-		console.log("Desconectou: " + clients[client.id]);
+		console.log("Desconectou");
 		io.emit("update", clients[client.id] + " saiu da sala.");
 		delete clients[client.id];
 	});
