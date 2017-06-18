@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@angular/core": "^4.2.3",
+    "express": "^4.15.3",
+    "jquery": "^3.2.1",
+    "socket.io-client": "^2.0.3",
+    "socketio": "^1.0.0"
+  }
+}
